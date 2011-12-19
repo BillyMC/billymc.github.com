@@ -13,6 +13,7 @@ h5{margin-left:18px;}
 .topofpage {font-size:10px;color:#666;}
 .menu {
     background-color: gray;
+    text-align: center;
     float: left;
     width: 200px;
     margin: 10px 0px 0px 30px;
@@ -26,7 +27,17 @@ h5{margin-left:18px;}
     /* -webkit-border-top-left-radius: 10px; */
     /* -moz-border-radius-topleft: 10px; */
 }
-.menu ul{margin-left: 20px;list-style: none;font-size: 20px;}
+.menu ul{
+    padding: 0;
+    margin-left: 0px;
+    list-style: none;
+    font-size: 20px;
+    line-height: 1.5em;
+}
+.menu li{ 
+    margin: 0;
+    padding: 0;
+}
 .menu a{color: #111;}
 .menu a:visited {color: #111;}  
 .menu a:hover {color: blue;}
@@ -71,10 +82,10 @@ a.show {color: #ddd;}
     behavior: url(border-radius.htc);
 }
 .moz {
-    background-image: -moz-linear-gradient(top,#eee,#333);
+    background-image: -moz-linear-gradient(top,#fff,#aaa);
 }
 .webkit {
-    background-image: -webkit-linear-gradient(top, #eee, #000); 
+    background-image: -webkit-linear-gradient(top, #fff, #aaa); 
 }
 li {margin: 10px 0px 5px 5px;}
 
