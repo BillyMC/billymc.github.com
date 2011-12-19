@@ -1,0 +1,176 @@
+body{
+    background: #325738;
+    margin: 0px 0px 0px 0px; 
+    color: #cce8cf;
+    font-family: sans-serif, Verdana, Arial, Helvetica;
+    font-size: 1.0em;
+    line-height: 18pt;
+    background-attachment: fixed;
+    background-image:url(../images/linux1.png);
+    /*  background-position:center center;*/
+    background-repeat:no-repeat;
+    background-position: left top;
+}
+
+/* 链接 */
+A { 
+    color: #78D987;
+    TEXT-DECORATION: none;
+    font-family: monospace,serif,sans-serif;
+    font-style: italic;
+}
+A:hover {
+    color: #cce8cf;
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 1.0em; 
+    margin-right: 40px;
+    margin-left: 230px;
+    text-align: center;
+    color: #DBF9E0;
+}
+
+
+h2 { 
+    color: #DBF9E0;
+    font-size: 1.8em;
+/*    border-top: solid black 1px;*/
+/*    border-bottom: solid black 2px;
+    Border-left: solid 3px black;
+    border-top: solid #212121 1px;
+    border-right:solid 1px black; */
+}
+
+h3 {
+    font-size: 1.6em;
+    margin-left: 1.0em;
+}
+
+h4 {
+    font-size: 1.4em;
+    margin-left: 1.2em;
+}
+
+h5 {
+    font-size: 1.2em;
+    margin-left: 1.4em;
+}
+
+h6 {
+    font-size: 1.2em;
+    margin-left: 1.6em;
+}
+
+.example { 
+    border: 1pt solid #4C8455;
+    padding-left: 1.0em;
+    padding-right: 1.0em;
+    padding-top: 0.2em;
+    padding-bottom: 0.3em
+    word-wrap:break-word;
+    word-break:break-all;
+    width: 80%;
+}
+
+pre {
+    color: #C5F5CC;
+    font-size: 10pt;
+/*    border: #4C8455 1px solid;*/
+    margin-left: 1em;
+    margin-right: 2em;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+pre.example {
+    margin-left: 2em;
+    width: fixed;
+}
+
+pre.syntax {
+    background: lightblue;
+}
+
+
+hr {
+    border-style: dashed;
+    border-color: #4C8455;
+}
+
+/* 表格 */
+table {
+    padding: 0em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border: none;
+    border-collapse:collapse
+}  
+
+th {
+    border: solid 1px green;
+    font-style: bold;
+    font-size: 1.0em;
+}
+
+td {
+    color: white;
+    font-size: 0.9em;
+    font-style: bold;
+    border: solid 1px green;
+}
+
+td.n {
+    border: none;
+    font-size: 1.0em;
+}
+
+div{
+    word-wrap: break-word; 
+    word-break: normal;
+    overflow: auto;
+}
+
+div.menu{
+    margin-top: 80px;
+    position: fixed;
+    width: 150px;
+    text-align: center;
+}
+
+div.top{
+    position: fixed;
+    width: 150px;
+    margin-top: 10px;
+    margin-right: 20x;
+    margin-left: 50px;
+    border: none;
+}
+
+div.contents{
+    font-size: 0.9em;
+    line-height: 1.2em;
+    position: fixed;
+    margin-left: 30px;
+    margin-top: 100px;
+    margin-right: 0px;
+    width: 160px;
+    height: 500px;
+    border: none;       
+}
+
+div.main{
+    padding: 20px 20px 20px 20px;
+    margin-left: 230px;
+    margin-right: 50px;
+    align: center;
+}
+
+div.navfoot{
+    margin-left: 230px;
+    margin-right: 20px;
+}
+
+
+

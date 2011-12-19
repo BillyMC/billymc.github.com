@@ -1,0 +1,73 @@
+body{
+    background: gray;
+}
+
+div.mainimg {
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+img {
+    align: center;
+}
+
+div.left {
+    float: left;
+    color: black;
+    width: 20%;
+    font-family: monospace sans-serif;
+    font-size: 1.2em;
+    padding: 3em 5em 0em 5em;
+    word-wrap: break-word;
+}
+
+div.right {
+    float:left;
+    width: 30%;
+    font-size: 1.1em;
+    margin-left: 2em;
+    margin-top: 5em;
+}
+
+div.menu {
+    float:left;
+    margin: 0 auto;
+    font-size: 1.4em;
+    padding-top: 3em;
+    padding-left: 25%;
+    text-align: center;
+}
+div.foot {
+    float:right;
+    margin-top: 17%;
+}
+
+span.first {
+    float: left;
+    width:0.7em;
+    font-size:300%;
+    font-family:algerian,courier;
+    line-height:80%;
+    padding: 0.2em 0.3em 0em 0.1em;
+}
+
+ul {
+    float:left;
+    width:100%;
+    padding:0;
+    margin:0;
+    list-style-type:none;
+}
+a {
+    float:left;
+    width:5em;
+    text-decoration:none;
+    color:black;
+}
+a:hover {
+    color: white;
+}
+li {
+    display:inline
+}
