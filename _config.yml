@@ -1,7 +1,7 @@
 destination: ./_site
 server: true
-auto:        true
-lsi:         false
+auto: true
+lsi: false
 server_port: 4000
 markdown: redcloth
 pygments: true
