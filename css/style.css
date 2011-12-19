@@ -1,7 +1,7 @@
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     margin: 10px 200px 10px 10px;
-    background-color: black;
+    background-color: #aaa;
     font-size: 12pt;
 }
 .author{font-size: 13px;padding-left:50px;margin:0px 0px 20px 0px;color:#666;}
@@ -17,12 +17,14 @@ h5{margin-left:18px;}
     width: 200px;
     margin: 10px 0px 0px 30px;
     padding-bottom: 50px;
-    -webkit-box-shadow: 0 0 150px #444;
-    -moz-box-shadow: 0 0 150px #444;
-    -webkit-border-top-right-radius: 10px;
-    -moz-border-radius-topright: 10px;
-    -webkit-border-top-left-radius: 10px;
-    -moz-border-radius-topleft: 10px;
+    -webkit-box-shadow: inset 0 0 30px #444;
+    -moz-box-shadow: inset 0 0 30px #444;
+    -webkit-box-shadow: 0 0 50px #fff;
+    -moz-box-shadow: 0 0 50px #fff;
+    /* -webkit-border-top-right-radius: 10px; */
+    /* -moz-border-radius-topright: 10px; */
+    /* -webkit-border-top-left-radius: 10px; */
+    /* -moz-border-radius-topleft: 10px; */
 }
 .menu ul{margin-left: 20px;list-style: none;font-size: 20px;}
 .menu a{color: #111;}
@@ -69,7 +71,7 @@ a.show {color: #ddd;}
     behavior: url(border-radius.htc);
 }
 .moz {
-    background-image: -moz-linear-gradient(top,#eee,#000);
+    background-image: -moz-linear-gradient(top,#eee,#333);
 }
 .webkit {
     background-image: -webkit-linear-gradient(top, #eee, #000); 
