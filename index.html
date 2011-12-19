@@ -1,8 +1,12 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <title>Test Page</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
+---
+layout: default
+title: Tom Preston-Werner
+---
+<div id="home">
+  <h1>List of Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+

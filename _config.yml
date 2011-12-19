@@ -1,0 +1,8 @@
+destination: ./_site
+server: true
+auto: true
+lsi: false
+pygments: true
+markdown: redcloth
+permalink: date
+

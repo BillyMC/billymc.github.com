@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Emacs 安装与使用</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="author" content="Bi Meichun/Billy"/>
+    <meta name="keywords" content="Linux Emacs LaTeX Coder"/>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+    <!-- SyntaxHighlighter -->
+    <script type="text/javascript" src="/js/sh/scripts/shCore.js"></script>
+    <script type="text/javascript" src="/js/sh/scripts/shBrushLisp.js"></script>
+    <link type="text/css" rel="stylesheet" href="/js/sh/styles/shCoreDefault.css"/>
+    <script type="text/javascript" src="/jquery.min.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <!-- SyntaxHighlighter end here -->
+  </head>
+  <body>
+    <div class="menu radius moz webkit">
+      <ul id="menu">
+	<li><a href="/">Home</a></li>
+	<li><a href="/latex.html">LaTeX</a></li>
+	<li><a href="/linux.html">Linux</a></li>
+	<li><a href="/emacs.html">Emacs</a></li>
+	<li><a href="/orgmode.html">OrgMode</a></li>
+	<li><a href="/sawfish.html">Sawfish</a></li>
+      </ul>
+    </div>
+
+    <div class="home radius">
+      
+      <div class="post">
+  <h1>Emacs 安装与使用</a></h1>
+  <span class="date">2011-12-18</span>
+  <div class="body"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">安装</h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>ArchLinux 下直接 <code>$ sudo pacman -S emacs</code>
+</li>
+<li>cvs 版本安装：
+<ol>
+<li><code>$ cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/sources/emacs co emacs</code>
+</li>
+<li><code>$ cd emacs</code>
+</li>
+<li><code>$ ./configure --prefix=/usr/local --with-x-toolkit=gtk --with-xpm --with-xft --with-freetype --with-jpeg --with-tiff --with-gif --with-png --with-x --enable-font-backend</code>
+</li>
+<li><code>$ make bootstrap</code>
+</li>
+<li><code>$ make info</code>
+</li>
+<li><code>$ src/emacs -q</code> 若没有问题，继续安装
+</li>
+<li><code>$ sudo make install</code>
+</li>
+<li><code>$ make clean</code>
+</li>
+</ol>
+
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">配置</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  配置文件为 <code>~/.emacs</code>
+</p>
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">设置字体</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>   在 <code>~/.emacs</code> 中添加:
+</p>
+
+
+<pre class="brush:lisp">
+(set-default-font "WenQuanYi Zen Hei Mono-15")
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">其他配置</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+
+
+<pre class="brush:lisp">
+;;;; 显示行号
+(require 'linum)
+(global-linum-mode 1)
+;; 光标颜色设置
+(set-cursor-color "gray60")
+;; 设置背景颜色和字体颜色
+(set-foreground-color "gray")
+(set-background-color "black")
+;; 关闭欢迎画面
+(setq inhibit-startup-message t)
+;;去掉工具栏
+(tool-bar-mode nil)
+;;时间显示设置
+;;启用时间显示设置
+(display-time-mode 1)
+;;时间使用24小时制
+(setq display-time-24hr-format t)
+;;时间显示包括日期和具体时间
+(setq display-time-day-and-date t)
+;;时间栏旁边启用邮件设置
+(setq display-time-use-mail-icon t)
+;;设置你的全名和邮件
+(setq user-full-name "Bi meichun")
+(setq user-mail-address "bimeichun@163.com")
+;;时间的变化频率
+(setq display-time-interval 10)
+;;指针不要闪
+(blink-cursor-mode -1)
+(transient-mark-mode 1)
+;;设置日历的一些颜色
+(setq calendar-load-hook
+'(lambda ()
+(set-face-foreground 'diary-face "skyblue")
+(set-face-background 'holiday-face "slate blue")
+(set-face-foreground 'holiday-face "white"))
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">基本快捷键</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  <code>C - Ctrl   M - Alt   S - Shift</code>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C-x C-f</td><td class="left">打开文件</td></tr>
+<tr><td class="left">C-x C-s</td><td class="left">保存文件</td></tr>
+<tr><td class="left">C-x C-w</td><td class="left">另存为</td></tr>
+<tr><td class="left">C-x b</td><td class="left">切换 buffer</td></tr>
+<tr><td class="left">C-x k</td><td class="left">关闭 buffer</td></tr>
+<tr><td class="left">C-k</td><td class="left">删除一行</td></tr>
+<tr><td class="left">C-y</td><td class="left">粘贴删除内容</td></tr>
+<tr><td class="left">C-w</td><td class="left">剪切</td></tr>
+<tr><td class="left">M-w</td><td class="left">复制</td></tr>
+<tr><td class="left">C-a</td><td class="left">跳到行首</td></tr>
+<tr><td class="left">C-e</td><td class="left">跳到行尾</td></tr>
+<tr><td class="left">C-&lt;backspace&gt;</td><td class="left">向前删除一个单词</td></tr>
+<tr><td class="left">M-d</td><td class="left">向后删除一个单词</td></tr>
+</tbody>
+</table>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+      
+    </div>
+  </body>
+</html>
+
