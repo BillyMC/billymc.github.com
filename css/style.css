@@ -96,12 +96,11 @@ code {
     color: #012345;
 }
 pre{
-    padding: 0.5em 0.5em 0em 0.5em;
-    font-size: 12pt;
     font-family: serif;
-    border: 1px solid #aaafff;
-    color: #012345;
-    background-color: #eeefff;
+    padding: 0.5em;
+    font-size: 12pt;
+    color: #e6e1dc;
+    background-color: #232323;
 }
 #related {
     margin-top: 2em;

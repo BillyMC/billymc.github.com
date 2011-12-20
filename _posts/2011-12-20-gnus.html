@@ -1,0 +1,156 @@
+---
+layout: post
+title: 使用 Org-mode 通过 Gnus 发送 html 邮件
+category: Orgmode
+---
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">说明</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>  使用 Gnus 通过 POP 收取 Gmail 邮件并通过 smtp 发送。
+</p>
+<p>  
+  可以在 Org-mode 里面编辑 html 邮件，然后通过 Gnus 发送。
+</p>
+<p>
+  一共分为两部分
+</p><ul>
+<li>Guns 配置与使用
+</li>
+<li>Org-mode 编辑并发送 html mail，使用 Org-mime
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">配置 Gnus</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  配置文件是 ~/.gnus.el
+</p>
+<p> 
+  以下是我的配置文件：
+</p>
+
+
+<pre class="src emacs-lisp">(setq user-full-name <span style="color: #ffa07a;">"Your Name"</span>) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#21457;&#20449;&#26102;&#25152;&#29992;&#21517;&#23383;</span>
+(setq user-mail-address <span style="color: #ffa07a;">"username@gmail.com"</span>)
+
+(setq gnus-secondary-select-methods '((nnml <span style="color: #ffa07a;">""</span>)))
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">POP</span>
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">pop setup</span>
+(setq mail-sources '((pop 
+                      <span style="color: #b0c4de;">:server</span> <span style="color: #ffa07a;">"pop.gmail.com"</span>  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">pop &#26381;&#21153;&#22120;</span>
+                      <span style="color: #b0c4de;">:user</span> <span style="color: #ffa07a;">"username@gmail.com"</span>  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#29992;&#25143;&#21517;</span>
+                      <span style="color: #b0c4de;">:port</span> 995                     <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#31471;&#21475;</span>
+                      <span style="color: #b0c4de;">:password</span> <span style="color: #ffa07a;">"password"</span>))) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#29992;&#25143;&#23494;&#30721;</span>
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">SMTP</span>
+(setq message-send-mail-function 'smtpmail-send-it)
+(setq smtpmail-default-smtp-server <span style="color: #ffa07a;">"smtp.gmail.com"</span>)
+(setq smtpmail-smtp-service 587)
+(setq smtpmail-starttls-credentials '((<span style="color: #ffa07a;">"smtp.gmail.com"</span> 587 nil nil)))
+(setq smtpmail-auth-credentials 
+      '((<span style="color: #ffa07a;">"smtp.gmail.com"</span> 587 <span style="color: #ffa07a;">"username@gmail.com"</span> <span style="color: #ffa07a;">"password"</span>)))
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">使用 Gnus</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  这里只收发邮件，不上新闻组
+</p>
+<p>
+  M-x gnus 打开 Gnus 提示连不上新闻组，直接 y y 进入。
+</p>
+<p>
+  按 ^ 进入你的邮箱，n p 上下移动，Space 进入阅读。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">g</td><td class="left">刷新 POP 信箱</td></tr>
+<tr><td class="left">m</td><td class="left">写邮件</td></tr>
+<tr><td class="left">C-c C-c</td><td class="left">发送</td></tr>
+<tr><td class="left">C-x s</td><td class="left">保存草稿</td></tr>
+<tr><td class="left">B DEL</td><td class="left">删除草稿</td></tr>
+<tr><td class="left">D e</td><td class="left">编辑草稿</td></tr>
+<tr><td class="left">Space</td><td class="left">阅读邮件</td></tr>
+<tr><td class="left">r</td><td class="left">回复</td></tr>
+<tr><td class="left">C-c C-k</td><td class="left">取消发信并删除草稿</td></tr>
+<tr><td class="left">q</td><td class="left">返回或退出</td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">配置 Org-mime</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>  Org-mode V7.8 中， Org-mime 在 contrib/lisp 下面，添加此路径，然后
+</p>
+
+
+<pre class="src emacs-lisp">(<span style="color: #00ffff;">require</span> '<span style="color: #7fffd4;">org-mime</span>)
+(setq org-mime-library 'mml)
+</pre>
+
+
+<p>
+  设置快捷键
+</p>
+
+
+<pre class="src emacs-lisp">(add-hook 'message-mode-hook
+          (<span style="color: #00ffff;">lambda</span> ()
+            (local-set-key <span style="color: #ffa07a;">"\C-c\M-m"</span> 'org-mime-htmlize)))
+
+(add-hook 'org-mode-hook
+          (<span style="color: #00ffff;">lambda</span> ()
+            (local-set-key <span style="color: #ffa07a;">"\C-c\M-m"</span> 'org-mime-org-buffer-htmlize)))
+</pre>
+
+
+<p>
+  编辑好邮件后，按 <b>C-c M-m</b> 便可以转换为 html 。然后 <b>C-c C-c</b> 发送即可。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">使用 CSS 样式</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>  可以通过如下设置使用 CSS 样式
+</p>
+
+
+<pre class="src emacs-lisp">(add-hook 'org-mime-html-hook
+          (<span style="color: #00ffff;">lambda</span> ()
+            (org-mime-change-element-style
+             <span style="color: #ffa07a;">"pre"</span> <span style="color: #ffa07a;">"color: #E6E1DC; background-color: #232323; padding: 0.5em;"</span>)))
+(add-hook 'org-mime-html-hook
+          (<span style="color: #00ffff;">lambda</span> ()
+            (org-mime-change-element-style
+             <span style="color: #ffa07a;">"caption"</span> <span style="color: #ffa07a;">"color: black; font-weight: bold; padding: 0.5em;"</span>)))
+</pre>
+
+</div>
+</div>
