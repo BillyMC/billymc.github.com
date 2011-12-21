@@ -1,0 +1,48 @@
+---
+layout: post
+title: Test
+categry: Test
+---
+
+NOTE: 注意
+
+h2. 注意
+
+<div class="note">
+这里是一个注意事项
+</div>
+
+# 免费，虽然是免费，但比收费的还要简单好用!
+# 支持多语言: 支持Clojure Erlang Javascript(Node.js) PHP Ruby，我只试用了Ruby
+# 支持多环境: 例如同时测试项目在 ruby1.8.6, 1.9.2, 1.9.3, jruby等的运行情况，支持多数据库mysql, postgres等
+# 支持浏览器headless测试: 结合Xvfb可以跑集成测试了
+# 非侵入式，只需要一个.travis.yml，就可以了，项目不用做过多的改动
+
+_下划线_ *单星号* **双星号** __双下划线__
+
+??citation?? -delete- +inserted text+ ^上标号^ ~波浪号~ %百分号% @AT@
+
+hn. heading
+bq. Blockquote
+fnn. Footnote
+p. Paragraph
+bc. Block code
+pre. Pre-formatted
+# Numeric list
+* Bulleted list
+
+BMC (tm) BMC (r) BMC (c) 
+
+see Footnote[1]
+
+fn1. Footnote
+
+==no <b>textile</b>==
+
+notextile. no <b>textile
+here</b>
+
+bq.. quote
+continue quote
+
+p.Paragraph

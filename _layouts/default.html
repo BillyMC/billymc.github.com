@@ -13,12 +13,15 @@
     <div class="menu radius moz webkit">
       <ul id="menu">
 	<li><a href="/">Home</a></li>
-	<li><a href="/latex.html">LaTeX</a></li>
-	<li><a href="/linux.html">Linux</a></li>
-	<li><a href="/emacs.html">Emacs</a></li>
-	<li><a href="/orgmode.html">OrgMode</a></li>
-	<li><a href="/sawfish.html">Sawfish</a></li>
-	<li><a href="/web.html">Web</a></li>
+	<!-- <li><a href="/latex.html">LaTeX</a></li> -->
+	<!-- <li><a href="/linux.html">Linux</a></li> -->
+	<!-- <li><a href="/emacs.html">Emacs</a></li> -->
+	<!-- <li><a href="/orgmode.html">OrgMode</a></li> -->
+	<!-- <li><a href="/sawfish.html">Sawfish</a></li> -->
+	<!-- <li><a href="/web.html">Web</a></li> -->
+        {% for category in site.categories %}
+        <li><a href="/{{category | first}}.html">{{category | first}}</a></li>
+        {% endfor %}
 	<li><a href="http://www.bimeichun.com">OldHome</a></li>
       </ul>
     </div>

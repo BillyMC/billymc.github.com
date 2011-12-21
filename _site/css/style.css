@@ -114,3 +114,11 @@ span.date{
 ul,ol {
     padding-left: 2em;
 }
+.note {
+    background-image: url(/images/tip.png);
+    background-repeat: no-repeat;
+    background-color: #eeefff;
+    border: #aaa 1px dotted;
+    margin: 1em 3em 1em 3em;
+    padding: 0.5em 1em 0.5em 1em;
+}
