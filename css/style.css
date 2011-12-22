@@ -6,7 +6,12 @@ body {
 }
 .author{font-size: 13px;padding-left:50px;margin:0px 0px 20px 0px;color:#666;}
 h1 {color: green; padding-left: 30px;margin-bottom: 3px;}
-h2 {padding-left: 10px; border-left:4px #bbb solid;margin-bottom:3px;}
+h2 {
+    padding-left: 10px;
+    margin-top: 1em;
+    /* background-image: -webkit-linear-gradient(top, #aaa, #fff);  */
+    /* background-image: -moz-linear-gradient(top,#aaa,#fff); */
+}
 h3{margin-left: 10px;}
 h4{margin-left:14px;}
 h5{margin-left:18px;}
@@ -98,7 +103,7 @@ code {
 pre{
     font-family: serif;
     padding: 0.5em;
-    font-size: 12pt;
+    font-size: 11pt;
     color: #e6e1dc;
     background-color: #232323;
 }
@@ -121,4 +126,19 @@ ul,ol {
     border: #aaa 1px dotted;
     margin: 1em 3em 1em 3em;
     padding: 0.5em 1em 0.5em 1em;
+}
+
+#toc {
+    margin: 1em 2em 1em 3em;
+}
+#toc a{
+    display: block;
+}
+#toc a[title="H3"] {
+    margin-left: 1em;
+    font-size: 80%;
+}
+.hover { 
+    background-image: -webkit-linear-gradient(top, #aaa, #fff);
+    background-image: -moz-linear-gradient(top,#aaa,#fff);
 }
