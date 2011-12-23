@@ -28,6 +28,7 @@ fnn. Footnote
 p. Paragraph
 bc. Block code
 pre. Pre-formatted
+
 # Numeric list
 * Bulleted list
 

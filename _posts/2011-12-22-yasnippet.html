@@ -1,0 +1,148 @@
+---
+layout: post
+title: Emacs YASnippet 自动补全
+category: Emacs
+---
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">简介</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>  YASnippet 是一个非常好用的 Emacs 模板系统（template system），它使用户可以通过输入缩写词自动插入预先定义好的模板。
+</p>
+<p>
+  YASnippet 的语法灵感来源于 <a href="http://manual.macromates.com/en/snippets">TextMate</a> 的语法，你可以在 YASnippet 中使用大部分的 TextMate 模板。
+</p>
+<p>
+  YASnippet 现在搬到 <a href="https://github.com/capitaomorte/yasnippet">Github</a> 上了。
+</p>
+<p>
+  我所使用的是打包的 yasnippet-bundle.el，关于 <i>normal</i> 版本安装及使用，请访问 <a href="https://github.com/capitaomorte/yasnippet">https://github.com/capitaomorte/yasnippet</a> 。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">安装</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  下载 yasnippet-bundle.el 放到你的 ~/.emacs.d/plugins/ 
+</p>
+<p>
+然后在你的配置文件 ~/.emacs 中添加:
+</p>
+
+
+<pre class="src emacs-lisp">(add-to-list 'load-path
+              <span style="color: #ffa07a;">"~/.emacs.d/plugins"</span>)
+(<span style="color: #00ffff;">require</span> '<span style="color: #7fffd4;">yasnippet-bundle</span>)
+</pre>
+
+
+<p>
+当然，你可以把它放到其他地方，这没有影响。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">使用</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  你可以使用 M-x yas/minor-mode 在你当前模式激活 YASnippet。
+</p>
+<p>
+  YASnippet 默认有一些模板了，你可以通过点击 Emacs 菜单栏上的 YASnippet 查看。但是如果要更好地使用 YASnippet ，我们需要根据自己的需要编写模板，编写模板非常的简单。
+</p>
+<p>
+我把 YASnippet 模板统一放到了 <code>~/.emacs.d/myel/mysnippet</code> 下面
+</p>
+
+
+<pre class="src emacs-lisp"><span style="color: #ff7f24;">;;</span><span style="color: #ff7f24;">&#35774;&#32622;&#27169;&#26495;&#20301;&#32622;</span>
+(setq yas/root-directory <span style="color: #ffa07a;">"~/.emacs.d/myel/mysnippet"</span>)
+(yas/load-directory yas/root-directory)
+</pre>
+
+
+<p>
+在 Emacs 里面 M-x yas/new-snippet 即可把模板定义调出来，然后可以根据自己的需要编写模板。
+</p>
+<p>
+比如编写一个 <span style="text-decoration:underline;">使用 Org-mode 编写 jekyll 博客</span> 的 YASnippet 模板:
+</p>
+<ul>
+<li>输入 M-x yas/new-snippet 然后输入名字
+</li>
+<li>输入以下内容
+</li>
+</ul>
+
+
+
+
+
+<pre class="src bash"># -*- mode: snippet -*-
+# name: jekyll
+# --
+#+BEGIN_HTML
+---
+layout: ${1:post}
+title: ${2:LaTeX}
+category: ${3:LaTeX}
+---
+
+$0
+</pre>
+
+<ul>
+<li>保存
+</li>
+<li>选择 Emacs 工具栏上 <b>YASnippet -&gt; Reload everything</b> 。
+</li>
+</ul>
+
+
+<p>
+接下来，在文件中
+</p><ul>
+<li>输入 jekyll 然后 C-i (或者 TAB) 即可展开
+</li>
+<li>光标首先跳到 <code>${1:}</code> 的地方
+</li>
+<li>然后输入完后按 <b>TAB</b> 就会跳到 <code>${2:}</code> &hellip;
+</li>
+<li>最后跳到 <code>$0</code> 即退出此次模板。
+</li>
+<li>如果不输入，将保留括号里的内容。
+</li>
+</ul>
+
+
+<p>
+当然，这里我把 <code>key</code> （更近一步缩写）和 <code>binding</code> (快捷键绑定）给删了，这是不会影响的。如果你喜欢使用快捷键，那么可以设置快捷键。
+</p>
+<p>
+更多内容请访问 <a href="https://github.com/capitaomorte/yasnippet">YASnippet on Github</a> 。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">参考</h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li><a href="https://github.com/capitaomorte/yasnippet">https://github.com/capitaomorte/yasnippet</a>
+</li>
+<li><a href="http://capitaomorte.github.com/yasnippet/">Yet Another Snippet extension</a>
+</li>
+</ul>
+
+</div>
+</div>

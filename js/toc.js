@@ -22,3 +22,4 @@ $(document).ready(
 		$(this).removeClass('hover');}
 	);
     });
+
