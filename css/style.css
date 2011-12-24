@@ -1,7 +1,7 @@
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     margin: 10px 200px 10px 10px;
-    background-color: #aaa;
+    background-color: #001D23;
     font-size: 12pt;
 }
 .author{font-size: 13px;padding-left:50px;margin:0px 0px 20px 0px;color:#666;}
@@ -49,8 +49,8 @@ h5{margin-left:18px;}
 
 .home {
     /* border: 10px solid #000; */
-    -webkit-box-shadow: inset 0 0 20px #000;
-    -moz-box-shadow: inset 0 0 20px #000;
+    -webkit-box-shadow: inset 0 0 50px #000;
+    -moz-box-shadow: inset 0 0 50px #000;
     /* background-color: hsl(85%,90%,205); */
     background: #fffff0;
     padding: 10px 30px 20px 40px;
@@ -87,10 +87,10 @@ a.show {color: #ddd;}
     behavior: url(border-radius.htc);
 }
 .moz {
-    background-image: -moz-linear-gradient(top,#fff,#aaa);
+    background-image: -moz-linear-gradient(top,#eee,#666);
 }
 .webkit {
-    background-image: -webkit-linear-gradient(top, #fff, #aaa); 
+    background-image: -webkit-linear-gradient(top, #eee, #555); 
 }
 li {margin: 10px 0px 5px 5px;}
 
