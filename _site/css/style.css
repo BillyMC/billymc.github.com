@@ -34,7 +34,7 @@ h5 { font-size: 110%; }
     behavior: url(border-radius.htc);
 }
 .menu a:visited {color: #001D23;}  
-.menu a:hover {color: #001D23;}
+.menu a:hover {color: white; text-decoration: none; background-color: #316140;}
 
 .home {
     padding: 20px 20px 20px 50px;
