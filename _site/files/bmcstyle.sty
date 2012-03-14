@@ -1,0 +1,70 @@
+
+\usepackage{ctex}
+\usepackage{ctexcap} % 需要将 ctexcap.sty 里与 ctex 宏包重复的部分注释，即不用加载相同包
+\usepackage{caption} % 标题宏包
+\usepackage{fancyhdr} % 页脚页眉
+% \usepackage{amsthm} % 数学
+\usepackage{ulem} % 删除线 ?
+\usepackage{float} % 浮动体
+\usepackage[unicode=true,colorlinks=no,pdfborder=no]{hyperref} %% 书签
+% \usepackage{titletoc} %% 目录
+
+%%%% 版面设计
+\setlength{\paperwidth}{21cm} %% 页宽
+\setlength{\paperheight}{29.7cm} %% 页高
+\setlength{\hoffset}{-1in} %% 垂直基准线偏移
+\setlength{\voffset}{-1in} %% 水平基准线偏移
+\setlength{\oddsidemargin}{2.5cm} %% 附加空白
+\setlength{\marginparsep}{0cm} %% 边注间最短距离
+\setlength{\marginparwidth}{0cm} %% 边注宽度
+\setlength{\textwidth}{16cm} %% 版心宽度
+\setlength{\topmargin}{1.0cm} %% 页眉与水平基准线距离
+\setlength{\headsep}{1.5cm} %% 页眉与版心距离
+\setlength{\textheight}{24.7cm} %% 版心高度
+\setlength{\footskip}{1.5cm} %% 版心最后一行文本基线与页脚基线距离
+
+% \captionsetup[table]{labelsep=quad,labelfont=bf} % 表格标题样式
+% \CTEXoptions[contentsname={\zihao{3}目\hspace{2em}录}] %
+%%%% 章节标题
+%\setcounter{secnumdepth}{4} % 章节标题编号深度
+%\setcounter{tocdepth}{4} % 目录深度
+\CTEXsetup[name={第~,~章},number={\chinese{chapter}}]{chapter}
+\CTEXsetup[nameformat+={\LARGE},titleformat+={\LARGE}]{chapter}
+\CTEXsetup[beforeskip={-23pt},afterskip={20pt plus 2pt minus 2pt}]{chapter}
+% \CTEXsetup[nameformat+={\bf\heiti\zihao{3}},titleformat+={\bf\heiti\zihao{3}}]{chapter}
+% \CTEXsetup[format+={\raggedright},nameformat+={\zihao{4}},titleformat+={\zihao{4}},aftername=\space]{section} %
+% \CTEXsetup[format+={\raggedright},nameformat+={\zihao{-4}},titleformat+={\zihao{-4}},aftername=\space,indent=24.2pt]{subsection}%
+% \CTEXsetup[format+={\raggedright},nameformat+={\zihao{-4}},titleformat+={\zihao{-4}},aftername=\space,indent=24.2pt]{subsubsection}%
+% 节标题居左
+%%%% 目录设置
+%\titlecontents{chapter}[4em]{\heiti}}{\contentslabel{4.0em}}{}{\titlerule*[0.5pc]{$\cdot$}\small\contentspage}
+
+%%%% 页脚页眉页码
+% \newcommand{\TNR}{\setmainfont{Times New Roman}}
+% \renewcommand{\thepage}{\arabic{page}}
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+% \fancyhead[L]{\nouppercase{\fangsong\leftmark}}
+\fancyhead[L]{BMC \LaTeXe~Document}
+\fancypagestyle{plain}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}}
+
+%%% 例子标题
+\makeatletter
+\newcommand\floatc@simplerule[2]{{{\@fs@cfont #1} #2}\par}% % 定制新浮动体样式
+\newcommand\fs@simplerule{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@simplerule
+  \def\@fs@pre{}
+  \def\@fs@post{\kern4pt\kern4pt \relax}%
+  \def\@fs@mid{\kern8pt}%
+  \let\@fs@iftopcapt\iftrue}
+
+\floatstyle{simplerule} % 浮动体使用样式
+\newfloat{exam}{htb}{loe}[section]
+% \floatname{example}{\examplename}
+\floatname{exam}{例 }
+\captionsetup[exam]{justification=raggedright,singlelinecheck=false,labelsep=quad,labelfont=bf}
+\makeatother
+% %%%% 正文
+% \linespread{1.2} %% 1.2 倍行距
+

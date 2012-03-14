@@ -5,61 +5,46 @@
 }
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    margin: 10px 200px 10px 10px;
     background-color: #001D23;
     font-size: 12pt;
     line-height: 1.5;
 }
 .author{font-size: 13px;padding-left:50px;margin:0px 0px 20px 0px;color:#666;}
-h1, h2, h3, h4, h5 { margin-top: 1em; }
+h2, h3, h4, h5 { margin-top: 1em;} 
 h1 { font-size: 200%; color: green; padding-left: 30px;margin-bottom: 3px;}
-h2 { font-size: 160%; }
-h3 { font-size: 140%; }
+h2 { font-size: 140%; background-color: #BBCCEE; padding-left: 10px; margin-right: 50px;}
+h3 { font-size: 130%; }
 h4 { font-size: 120%; }
 h5 { font-size: 110%; }
 .topofpage {font-size:10px;color:#666;}
 .menu {
-    background-color: gray;
-    text-align: center;
-    float: left;
-    width: 200px;
-    margin: 10px 0px 0px 30px;
-    padding-top: 1em;
-    padding-bottom: 3em;
-    -webkit-box-shadow: inset 0 0 30px #444;
-    -moz-box-shadow: inset 0 0 30px #444; 
-    -webkit-box-shadow: 0 0 50px #fff;
-    -moz-box-shadow: 0 0 50px #fff;
-    /* -webkit-border-top-right-radius: 10px; */
-    /* -moz-border-radius-topright: 10px; */
-    /* -webkit-border-top-left-radius: 10px; */
-    /* -moz-border-radius-topleft: 10px; */
+    font-size: 14pt;
+    padding: 0px 10px 0px 10px;
+    line-height: 1.0;
+    text-align: right;
+    background-color: #001D23;
+    margin: 10px 40px 0px 0px;
 }
-.menu ul{
-    padding: 0;
-    margin-left: 0px;
-    list-style: none;
-    font-size: 20px;
-    line-height: 1.5em;
-}
-.menu li{ 
+.menu a{
     margin: 0;
-    padding: 0;
+    color: #001D23;
+    background-color: white; 
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    behavior: url(border-radius.htc);
 }
-.menu a{color: #111;}
-.menu a:visited {color: #111;}  
-.menu a:hover {color: blue;}
+.menu a:visited {color: #001D23;}  
+.menu a:hover {color: #001D23;}
 
 .home {
-    /* border: 10px solid #000; */
-    -webkit-box-shadow: inset 0 0 30px #000;
-    -moz-box-shadow: inset 0 0 30px #000;
-    /* background-color: hsl(85%,90%,205); */
+    padding: 20px 20px 20px 50px;
     background: #fffff0;
-    padding: 10px 30px 20px 40px;
-    margin: 20px 30px 0px 260px;
+    margin: 0 20px 20px 20px;
     height:auto !important;
-    min-height:700px;
+    min-height:670px;
+}
+#connect {
+    margin-right: 20px;
 }
 #navfoot { font-size: 12px; color:#555;text-align:center;margin:10px 30px 10px 260px;}
 
@@ -89,7 +74,7 @@ code {
 }
 pre{
     font-family: serif;
-    margin: 0.5em;
+    margin: 0.5em 50px 0.5em 0.5em;
     padding: 0.5em;
     font-size: 11pt;
     color: #e6e1dc;
@@ -121,6 +106,7 @@ li {
 }
 
 #toc {
+    background-color: #fffff0;
     margin: 1em 2em 1em 3em;
     padding: 10px;
     float: right;
@@ -137,8 +123,9 @@ li {
     font-size: 80%;
 }
 .hover { 
-    background-image: -webkit-linear-gradient(top, #aaa, #fff);
-    background-image: -moz-linear-gradient(top,#aaa,#fff);
+    text-decoration: underline;
+    /* background-image: -webkit-linear-gradient(top, #aaa, #fff); */
+    /* background-image: -moz-linear-gradient(top,#aaa,#fff); */
 }
 .footref {
     font-size: 80%;
