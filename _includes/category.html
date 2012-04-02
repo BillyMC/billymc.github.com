@@ -1,10 +1,12 @@
-<h1>{{ page.category }}</h1>
-<span class="total">total: {{ site.categories[page.title] | size }}</span>
-<ul id="blogs">
-  {% for post in site.categories[page.title] %}
-  <li>
-    <span>{{post.date | date: "%Y-%m-%d"}}</span>
-    <a href="{{post.url}}">{{post.title}}</a>
-  </li>
-  {% endfor %}
-</ul>
+<div id="category">
+  <h1>{{ page.category }}</h1>
+  <span class="total">total: {{ site.categories[page.title] | size }}</span>
+  <ul id="blogs">
+    {% for post in site.categories[page.title] %}
+    <li>
+      <span>{{post.date | date: "%Y-%m-%d"}}</span>
+      <a href="{{post.url}}">{{post.title}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
